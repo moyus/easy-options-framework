@@ -1,4 +1,4 @@
-=== Easy Options Framework ===
+## Easy Options Framework
 Contributors: mr.moyus
 Donate link: http://www.20theme.com
 Tags: settings, options, api, framework
@@ -10,11 +10,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A simple framework which use WordPress Settings API for building WordPress theme and plugin options.
 
-== Description ==
+## Description
 
 Easy options framework which uses the WordPress Settings API makes it easy to create an options panel in any WordPress theme and plugin. It is very extensible, and very easy to integrate with by other developers instead of creating an options panel from scratch. For the most important, it is free to use in both commercial and personal projects!
 
-== Include Fields ==
+## Included Fields
 
 - text input
 - email input
@@ -36,7 +36,7 @@ Easy options framework which uses the WordPress Settings API makes it easy to cr
 
 (Besides the included fields above, you also can set section tab content as custom html content or set section tab as a url link)
 
-== Installation ==
+## Installation
 
 ### Use this plugin as standalone
 
