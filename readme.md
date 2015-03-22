@@ -1,12 +1,12 @@
 ## Easy Options Framework
-Contributors: mr.moyus
-Donate link: http://www.20theme.com
-Tags: settings, options, api, framework
-Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Contributors: mr.moyus  
+Donate link: http://www.20theme.com  
+Tags: settings, options, api, framework  
+Requires at least: 3.8  
+Tested up to: 4.1  
+Stable tag: 1.0.0  
+License: GPLv2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
 A simple framework which use WordPress Settings API for building WordPress theme and plugin options.
 
@@ -46,8 +46,8 @@ Easy options framework which uses the WordPress Settings API makes it easy to cr
 
 ### Distributing Easy Options Framework in a plugin / theme
 
-Copy the plugin to your theme / plugin
-Customize the directory and path settings
+1. Copy the plugin to your theme / plugin
+2. Customize the directory and path settings
 
 ```
 define('EOF_DIR', get_template_directory() . '/eof');
