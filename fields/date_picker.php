@@ -74,13 +74,13 @@ class EOF_field_date extends EOF_field {
 				break;
 		}
 	?>
-		<input type="date" class="<?php echo $class; ?>" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $this->value; ?>">
+		<input type="date" class="<?php echo esc_attr($class); ?>" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($this->value); ?>">
 		<span class="description"><?php echo $this->field['desc']; ?></span>
 	<?php
 	}
 
 	public function sanitize( $value ) {
-
+		
 		$sanitize_value = strip_tags($value);
 
 		return $sanitize_value;

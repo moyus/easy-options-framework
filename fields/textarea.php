@@ -77,17 +77,19 @@ class EOF_field_textarea extends EOF_field {
 		}
 
 		?>
-		<textarea class="<?php echo $class; ?>" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" cols="<?php echo $this->field['cols']; ?>" rows="<?php echo $this->field['rows']; ?>"><?php echo esc_textarea( stripslashes( $this->value ) ); ?></textarea>
+		<textarea class="<?php echo esc_attr($class); ?>" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" cols="<?php echo (is_int($this->field['cols'])) ? $this->field['cols'] : 80; ?>" rows="<?php echo (is_int($this->field['rows'])) ? $this->field['rows'] : 20; ?>"><?php echo esc_textarea( $this->value ); ?></textarea>
 		<br/>
 		<p class="description"><?php echo $this->field['desc']; ?></p>
 	<?php
 	}
 
-	public function sanitize( $value ) {
+	public function sanitize( $input ) {
+		//global $allowedposttags;
 
-		$sanitize_value = $value;
-
-		return $sanitize_value;
+		// $sanitize_input = wp_kses( $input, $allowedposttags );
+		$sanitize_input = $input;
+		
+		return $sanitize_input;
 	}
 
 }

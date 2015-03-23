@@ -77,17 +77,17 @@ class EOF_field_image_select extends EOF_field {
 				$enabled = 1;
 			}
 		?>
-				<label for="<?php echo $this->option_name; ?>" style="display:inline-block;margin-right:15px;">
-				<input type="radio" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" data-image="<?php echo $option['img_url']; ?>" class="radioImageSelect" value="<?php echo $key ?>" <?php checked( 1, $enabled, true ); ?> >
-				<p style="text-align:center;"><?php echo $option['label']; ?></p></label>
+				<label for="<?php echo esc_attr($this->option_name); ?>" style="display:inline-block;margin-right:15px;">
+				<input type="radio" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" data-image="<?php echo esc_attr($option['img_url']); ?>" class="radioImageSelect" value="<?php echo esc_attr($key) ?>" <?php checked( 1, $enabled, true ); ?> >
+				<p style="text-align:center;"><?php echo esc_html($option['label']); ?></p></label>
 			<?php
 		}
 		echo  '<p class="description" style="margin-top:15px;">' . $this->field['desc'] . '</p>';
 	}
 
-	public function sanitize( $value ) {
+	public function sanitize( $input ) {
 
-		return $value;
+		return $input;
 	}
 
 }

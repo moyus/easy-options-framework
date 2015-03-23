@@ -37,6 +37,7 @@ class EOF_field_rich_editor extends EOF_field {
 			'desc'			=> '',
 			'default' 		=> '',
 			'rows'			=> 20,
+			'cols'			=> 80,
 			'sizes'			=> 'large',
 			'readonly'		=> false,
 		) );
@@ -81,7 +82,7 @@ class EOF_field_rich_editor extends EOF_field {
 		} else {
 
 		?>
-		<textarea class="<?php echo $class; ?>" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" rows="<?php echo $this->field['rows'] ?>"><?php echo esc_textarea( stripslashes( $this->value ) ); ?></textarea>
+		<textarea class="<?php echo esc_attr($class); ?>" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" cols="<?php echo (is_int($this->field['cols'])) ? $this->field['cols'] : 80; ?>" rows="<?php echo (is_int($this->field['rows'])) ? $this->field['rows'] : 20; ?>"><?php echo esc_textarea( stripslashes( $this->value ) ); ?></textarea>
 		<?php
 		}
 	?>
@@ -90,11 +91,11 @@ class EOF_field_rich_editor extends EOF_field {
 	<?php
 	}
 
-	public function sanitize( $value ) {
+	public function sanitize( $input ) {
 
-		$sanitize_value = $value;
+		$sanitize_input = $input;
 
-		return $sanitize_value;
+		return $sanitize_input;
 	}
 
 }

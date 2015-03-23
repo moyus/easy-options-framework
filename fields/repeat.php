@@ -70,7 +70,7 @@ class EOF_field_repeat extends EOF_field {
 					<?php  
 						foreach ($this->field['sub_fields'] as $key => $sub_field) {
 							printf('<th scope="col">%1$s</th>',
-								$sub_field['title']
+								esc_html($sub_field['title'])
 							);
 						}
 					?>

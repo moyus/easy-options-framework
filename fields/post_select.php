@@ -12,7 +12,7 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if( class_exists('EOF_field') ) :
+if( !class_exists('EOF_field_post_select') ) :
 
 class EOF_field_post_select extends EOF_field {
 	/**
@@ -97,20 +97,20 @@ class EOF_field_post_select extends EOF_field {
 		}
 
 	?>
-		<select class="<?php echo $class; ?>" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>">
+		<select class="<?php echo esc_attr($class); ?>" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>">
 		<?php  
 			// Placeholder
 			if( empty($this->value) && !empty($options) ) {
-				echo '<option value="" disabled selected>'. $this->field['holder'] .'</option>';
+				echo '<option value="" disabled selected>'. esc_html($this->field['holder']) .'</option>';
 			} elseif ( empty($options) ) {
 				echo '<option value="" disabled selected>'. __('Nothing found.', 'eof') .'</option>';
 			}
 
 			foreach ($options as $val => $label) {
 				printf('<option value="%1$s" %2$s>%3$s</option>',
-					$val,
+					esc_attr($val),
 					selected( $val, $this->value, false ),
-					$label
+					esc_html($label)
 				);
 			}
 		?>
@@ -119,11 +119,11 @@ class EOF_field_post_select extends EOF_field {
 	<?php
 	}
 
-	public function sanitize( $value ) {
+	public function sanitize( $input ) {
 
-		$sanitize_value = strip_tags($value);
+		$sanitize_input = intval($input);
 
-		return $sanitize_value;
+		return $sanitize_input;
 	}
 }
 

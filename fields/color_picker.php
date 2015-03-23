@@ -78,18 +78,18 @@ class EOF_field_color extends EOF_field {
 
 		//input type can also be set as 'color', seems fun.
 	?>
-		<input type="text" class="eof-color-picker" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $this->value; ?>">
-		<span class="description"><?php echo $this->field['desc']; ?></span>
+		<input type="text" class="eof-color-picker" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr( $this->value ); ?>">
+		<span class="description"><?php echo esc_js( $this->field['desc'] ); ?></span>
 	<?php
 	}
 
-	public function sanitize( $value ) {
+	public function sanitize( $input ) {
 
-		$sanitize_value = strip_tags($value);
-		if( !preg_match( '/^#[a-f0-9]{6}$/i', $sanitize_value ) ) {
+		$sanitize_input = strip_tags($input);
+		if( !preg_match( '/^#[a-f0-9]{6}$/i', $sanitize_input ) ) {
 			//add_settings_error( $setting, $code, $message, $type );
 		}
-		return $sanitize_value;
+		return $sanitize_input;
 	}
 
 }

@@ -66,14 +66,14 @@ class EOF_field_radio extends EOF_field {
 			
 			if( $this->field['style'] == 2 ) {
 		?>
-			<label for="<?php echo $this->option_name; ?>" style="display:inline-block;margin-right:10px;">
-			<input type="radio" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $key ?>" <?php checked( $key, $this->value, true ); ?> >
+			<label for="<?php echo esc_attr($this->option_name); ?>" style="display:inline-block;margin-right:10px;">
+			<input type="radio" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($key); ?>" <?php checked( $key, $this->value, true ); ?> >
 			<?php echo $label; ?></label>
 		<?php
 			} else {
 		?>
-			<input type="radio" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $key ?>" <?php checked( $key, $this->value, true ); ?> >
-			<span class="description"><?php echo $label; ?></span>
+			<input type="radio" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($key); ?>" <?php checked( $key, $this->value, true ); ?> >
+			<span class="description"><?php echo esc_html($label); ?></span>
 			<br>
 		<?php
 			}

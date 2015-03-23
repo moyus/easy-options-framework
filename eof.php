@@ -12,7 +12,7 @@
  * Plugin Name: Easy Options Framework
  * Plugin URI:  http://www.20theme.com/plugins/easy-options-framework
  * Description: A framework for building WordPress theme and plugin options.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      moyu
  * Author URI:  http://www.20theme.com
  * License:     GPL-2.0+

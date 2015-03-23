@@ -77,12 +77,12 @@ class EOF_field_checkbox extends EOF_field {
 				if( isset($this->field['style']) && $this->field['style'] == 2 ) {
 			?>
 				<label for="<?php echo "{$this->option_name}[]"; ?>" style="display:inline-block;margin-right:10px;">
-				<input type="checkbox" name="<?php echo "{$this->option_name}[]"; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $key ?>" <?php checked( 1, $enabled, true ); ?> >
+				<input type="checkbox" name="<?php echo "{$this->option_name}[]"; ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($key) ?>" <?php checked( 1, $enabled, true ); ?> >
 				<?php echo $label; ?></label>
 			<?php
 				} else {
 			?>
-				<input type="checkbox" name="<?php echo "{$this->option_name}[]"; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $key ?>" <?php checked( 1, $enabled, true ); ?> >
+				<input type="checkbox" name="<?php echo "{$this->option_name}[]"; ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($key) ?>" <?php checked( 1, $enabled, true ); ?> >
 				<label for="<?php echo "{$this->option_name}[]"; ?>"><?php echo $label; ?></label>
 				<br>
 			<?php
@@ -91,22 +91,22 @@ class EOF_field_checkbox extends EOF_field {
 			echo  '<p class="description" style="margin-top:15px;">' . $this->field['desc'] . '</p>';
 		} else {
 	?>	
-		<input type="checkbox" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" value="1" <?php checked( 1, $this->value, true ); ?> >
+		<input type="checkbox" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="1" <?php checked( 1, $this->value, true ); ?> >
 		<span class="description"><?php echo $this->field['desc']; ?></span>
 	<?php
 		}
 	}
 
-	public function sanitize( $value ) {
-		$sanitize_value = null;
+	public function sanitize( $input ) {
+		$sanitize_input = null;
 
-		if( is_array($value) ) {
-			$sanitize_value = $value;
+		if( is_array($input) ) {
+			$sanitize_input = $input;
 		} else {
-			$sanitize_value = ($value) ? '1' : '0';
+			$sanitize_input = ($input) ? '1' : false;
 		}
 		
-		return $sanitize_value;
+		return $sanitize_input;
 	}
 
 }

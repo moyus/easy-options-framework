@@ -62,16 +62,16 @@ class EOF_field_email extends EOF_field {
 	public function render_field() {
 		$class = 'regular-text';
 	?>
-		<input type="email" class="<?php echo $class ?>" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" placeholder="<?php echo $this->field['holder']; ?>" value="<?php echo $this->value; ?>">
+		<input type="email" class="<?php echo esc_attr($class); ?>" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" placeholder="<?php echo esc_attr($this->field['holder']); ?>" value="<?php echo esc_attr( sanitize_email($this->value) ); ?>">
 		<span class="description"><?php echo $this->field['desc']; ?></span>
 	<?php
 	}
 
-	public function sanitize( $value ) {
+	public function sanitize( $input ) {
 
-		$sanitize_value = sanitize_email( $value );
+		$sanitize_input = sanitize_email( $input );
 
-		return $sanitize_value;
+		return $sanitize_input;
 	}
 
 }

@@ -224,24 +224,24 @@ class EOF_Settings {
 	 * @return void
 	 */
 	public function require_files() {
-		require_once( EOF_DIR . '/core/field.php' );
-		require_once( EOF_DIR . '/fields/text.php' );
-		require_once( EOF_DIR . '/fields/date_picker.php' );
-		require_once( EOF_DIR . '/fields/email.php' );
-		require_once( EOF_DIR . '/fields/password.php' );
-		require_once( EOF_DIR . '/fields/textarea.php' );
-		require_once( EOF_DIR . '/fields/checkbox.php' );
-		require_once( EOF_DIR . '/fields/radio.php' );
-		require_once( EOF_DIR . '/fields/number.php' );
-		require_once( EOF_DIR . '/fields/select.php' );
-		require_once( EOF_DIR . '/fields/image_select.php' );
-		require_once( EOF_DIR . '/fields/post_select.php' );
-		require_once( EOF_DIR . '/fields/media.php' );
-		require_once( EOF_DIR . '/fields/rich_editor.php' );
-		require_once( EOF_DIR . '/fields/color_picker.php' );
-		require_once( EOF_DIR . '/fields/heading.php' );
-		require_once( EOF_DIR . '/fields/html.php' );
-		require_once( EOF_DIR . '/fields/repeat.php' );
+		require EOF_DIR . '/core/field.php';
+		require EOF_DIR . '/fields/text.php';
+		require EOF_DIR . '/fields/date_picker.php';
+		require EOF_DIR . '/fields/email.php';
+		require EOF_DIR . '/fields/password.php';
+		require EOF_DIR . '/fields/textarea.php';
+		require EOF_DIR . '/fields/checkbox.php';
+		require EOF_DIR . '/fields/radio.php';
+		require EOF_DIR . '/fields/number.php';
+		require EOF_DIR . '/fields/select.php';
+		require EOF_DIR . '/fields/image_select.php';
+		require EOF_DIR . '/fields/post_select.php';
+		require EOF_DIR . '/fields/media.php';
+		require EOF_DIR . '/fields/rich_editor.php';
+		require EOF_DIR . '/fields/color_picker.php';
+		require EOF_DIR . '/fields/heading.php';
+		require EOF_DIR . '/fields/html.php';
+		require EOF_DIR . '/fields/repeat.php';
 
 		$this->fieldTypes = apply_filters( 'eof_fieldTypes', array(
             'EOF_field_text',

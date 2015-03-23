@@ -59,7 +59,7 @@ class EOF_field_text extends EOF_field {
 	 * @return void
 	 */
 	public function render_field() {
-
+		
 		$class = '';
 		switch ($this->field['sizes']) {
 			case "small":
@@ -72,8 +72,8 @@ class EOF_field_text extends EOF_field {
 				$class .= ' regular-text';
 				break;
 		}
-	?>
-		<input type="text" class="<?php echo $class; ?>" name="<?php echo $this->option_name; ?>" id="<?php echo $this->option_id; ?>" value="<?php echo $this->value; ?>" >
+	?>	
+		<input type="text" class="<?php echo esc_attr($class); ?>" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($this->value); ?>" >
 		<span class="description"><?php echo $this->field['desc']; ?></span>
 	<?php
 	}
@@ -85,7 +85,7 @@ class EOF_field_text extends EOF_field {
 	 */
 	public function sanitize( $value ) {
 
-		$sanitize_value = strip_tags($value);
+		$sanitize_value = trim($value);
 		return $sanitize_value;
 	}
 

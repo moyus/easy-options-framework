@@ -1,10 +1,10 @@
 ## Easy Options Framework
 Contributors: mr.moyus  
-Donate link: http://www.20theme.com  
+Author URI: http://www.20theme.com  
 Tags: settings, options, api, framework  
 Requires at least: 3.8  
 Tested up to: 4.1  
-Stable tag: 1.0.0  
+Stable tag: 1.0.1
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -58,6 +58,7 @@ include_once ( get_template_directory() . '/sample-config.php');
 ```
 
 ## Change log
-
+#### 1.0.1
+	•	Add data sanitization and validation
 #### 1.0.0 
 	•	Initial release

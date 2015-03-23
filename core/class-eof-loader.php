@@ -39,10 +39,10 @@ if( !class_exists('EOF_Loader') ) :
 		 * @return void
 		 */
 		function require_files() {
-			require_once(EOF_DIR . '/core/class-eof-admin.php');
-			require_once(EOF_DIR . '/core/class-eof-views.php');
-			require_once(EOF_DIR . '/core/class-eof-settings.php');
-			require_once(EOF_DIR . '/core/class-eof-import-export.php');
+			require EOF_DIR . '/core/class-eof-admin.php';
+			require EOF_DIR . '/core/class-eof-views.php';
+			require EOF_DIR . '/core/class-eof-settings.php';
+			require EOF_DIR . '/core/class-eof-import-export.php';
 		}
 
 		/**

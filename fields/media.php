@@ -89,13 +89,13 @@ class EOF_field_media extends EOF_field {
 				break;
 		}
 	?>
-		<input type="text" class="<?php echo $class; ?>" id="<?php echo $this->option_id; ?>" name="<?php echo $this->option_name; ?>" value="<?php echo $this->value; ?>" /> 
-    	<input class="button eof-media-button" type="button" data-input-id="<?php echo $this->option_id; ?>" value="<?php _e('Upload'); ?>" />
+		<input type="text" class="<?php echo esc_attr($class); ?>" id="<?php echo esc_attr($this->option_id); ?>" name="<?php echo esc_attr($this->option_name); ?>" value="<?php echo esc_attr($this->value); ?>" /> 
+    	<input class="button eof-media-button" type="button" data-input-id="<?php echo esc_attr($this->option_id); ?>" value="<?php _e('Upload'); ?>" />
     	<?php  if(isset($this->value) && !empty($this->value)) : ?>
-    	<input class="button eof-media-delete-button" type="button" data-input-id="<?php echo $this->option_id; ?>" value="<?php _e('Delete'); ?>" />
+    	<input class="button eof-media-delete-button" type="button" data-input-id="<?php echo esc_attr($this->option_id); ?>" value="<?php _e('Delete'); ?>" />
     	<br>
     		<?php if($preview) : ?>
-    		<p class="image-preview"><img src="<?php echo $this->value; ?>" alt="" style="max-width:100%;"></p>
+    		<p class="image-preview"><img src="<?php echo esc_attr($this->value); ?>" alt="" style="max-width:100%;"></p>
     		<?php endif; ?>
     	<?php endif; ?>
 		<span class="description"><?php echo $this->field['desc']; ?></span>
