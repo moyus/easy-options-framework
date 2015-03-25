@@ -175,10 +175,10 @@ class EOF_Settings {
 		}
 		
 		// Merge our new settings with the existing
-		// $old_options = (array) $this->parent->options;
-		$null_options = (array) $this->parent->null_options;
+		$old_options = (array) $this->parent->options;
+		// $null_options = (array) $this->parent->null_options;
 
-		$output = array_merge( $null_options, $sanitizied_options );
+		$output = array_merge( $old_options, $sanitizied_options );
 		add_settings_error( "eof-". $this->parent->configs['opt_name'] ."-notices", '', __( 'Settings updated!', 'eof' ), 'updated' );
 
 		return $output;

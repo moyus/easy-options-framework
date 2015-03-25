@@ -78,10 +78,12 @@ class EOF_field_checkbox extends EOF_field {
 			?>
 				<label for="<?php echo "{$this->option_name}[]"; ?>" style="display:inline-block;margin-right:10px;">
 				<input type="checkbox" name="<?php echo "{$this->option_name}[]"; ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($key) ?>" <?php checked( 1, $enabled, true ); ?> >
+				<input type="hidden" name="<?php echo esc_attr($this->option_name); ?>" value="0" />
 				<?php echo $label; ?></label>
 			<?php
 				} else {
 			?>
+				<input type="hidden" name="<?php echo esc_attr($this->option_name); ?>" value="0" />
 				<input type="checkbox" name="<?php echo "{$this->option_name}[]"; ?>" id="<?php echo esc_attr($this->option_id); ?>" value="<?php echo esc_attr($key) ?>" <?php checked( 1, $enabled, true ); ?> >
 				<label for="<?php echo "{$this->option_name}[]"; ?>"><?php echo $label; ?></label>
 				<br>
@@ -91,6 +93,7 @@ class EOF_field_checkbox extends EOF_field {
 			echo  '<p class="description" style="margin-top:15px;">' . $this->field['desc'] . '</p>';
 		} else {
 	?>	
+		<input type="hidden" name="<?php echo esc_attr($this->option_name); ?>" value="0" />
 		<input type="checkbox" name="<?php echo esc_attr($this->option_name); ?>" id="<?php echo esc_attr($this->option_id); ?>" value="1" <?php checked( 1, $this->value, true ); ?> >
 		<span class="description"><?php echo $this->field['desc']; ?></span>
 	<?php
