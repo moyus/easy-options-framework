@@ -33,3 +33,11 @@ select.eof-large-select {
   text-align: center;
   width: 100px;
 }
+
+.small-table {
+  width: 380px !important;
+}
+
+.regular-table {
+  width: 620px !important;
+}

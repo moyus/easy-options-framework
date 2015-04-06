@@ -69,6 +69,11 @@ class EOF_Settings {
 
 		if( false == get_option( $this->parent->configs['opt_name'] ) ) {
 			add_option( $this->parent->configs['opt_name'] );
+
+			if($this->parent->configs['save_defaults']) {
+				update_option( $this->parent->configs['opt_name'], $this->parent->default_options );
+			}
+			
 		}
 
 		foreach ( $this->parent->sections as $section ) {
@@ -176,7 +181,6 @@ class EOF_Settings {
 		
 		// Merge our new settings with the existing
 		$old_options = (array) $this->parent->options;
-		// $null_options = (array) $this->parent->null_options;
 
 		$output = array_merge( $old_options, $sanitizied_options );
 		add_settings_error( "eof-". $this->parent->configs['opt_name'] ."-notices", '', __( 'Settings updated!', 'eof' ), 'updated' );
@@ -224,24 +228,24 @@ class EOF_Settings {
 	 * @return void
 	 */
 	public function require_files() {
-		require EOF_DIR . '/core/field.php';
-		require EOF_DIR . '/fields/text.php';
-		require EOF_DIR . '/fields/date_picker.php';
-		require EOF_DIR . '/fields/email.php';
-		require EOF_DIR . '/fields/password.php';
-		require EOF_DIR . '/fields/textarea.php';
-		require EOF_DIR . '/fields/checkbox.php';
-		require EOF_DIR . '/fields/radio.php';
-		require EOF_DIR . '/fields/number.php';
-		require EOF_DIR . '/fields/select.php';
-		require EOF_DIR . '/fields/image_select.php';
-		require EOF_DIR . '/fields/post_select.php';
-		require EOF_DIR . '/fields/media.php';
-		require EOF_DIR . '/fields/rich_editor.php';
-		require EOF_DIR . '/fields/color_picker.php';
-		require EOF_DIR . '/fields/heading.php';
-		require EOF_DIR . '/fields/html.php';
-		require EOF_DIR . '/fields/repeat.php';
+		require EOF_DIR . 'core/field.php';
+		require EOF_DIR . 'fields/text.php';
+		require EOF_DIR . 'fields/date_picker.php';
+		require EOF_DIR . 'fields/email.php';
+		require EOF_DIR . 'fields/password.php';
+		require EOF_DIR . 'fields/textarea.php';
+		require EOF_DIR . 'fields/checkbox.php';
+		require EOF_DIR . 'fields/radio.php';
+		require EOF_DIR . 'fields/number.php';
+		require EOF_DIR . 'fields/select.php';
+		require EOF_DIR . 'fields/image_select.php';
+		require EOF_DIR . 'fields/post_select.php';
+		require EOF_DIR . 'fields/media.php';
+		require EOF_DIR . 'fields/rich_editor.php';
+		require EOF_DIR . 'fields/color_picker.php';
+		require EOF_DIR . 'fields/heading.php';
+		require EOF_DIR . 'fields/html.php';
+		require EOF_DIR . 'fields/repeat.php';
 
 		$this->fieldTypes = apply_filters( 'eof_fieldTypes', array(
             'EOF_field_text',

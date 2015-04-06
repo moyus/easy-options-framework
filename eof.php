@@ -11,8 +11,8 @@
  * @wordpress-plugin
  * Plugin Name: Easy Options Framework
  * Plugin URI:  http://www.20theme.com/plugins/easy-options-framework
- * Description: A framework for building WordPress theme and plugin options.
- * Version:     1.0.1
+ * Description: A simple framework which uses the WordPress Settings API makes it easy to create an options panel in any WordPress theme and plugin.
+ * Version:     1.0.3
  * Author:      moyu
  * Author URI:  http://www.20theme.com
  * License:     GPL-2.0+
@@ -34,7 +34,7 @@ if( !defined('EOF_URL') ) {
 /**
  * The core plugin class files
  */
-require EOF_DIR . '/core/class-eof-loader.php';
-require EOF_DIR . '/core/class-eof.php';
+require EOF_DIR . 'core/class-eof-loader.php';
+require EOF_DIR . 'core/class-eof.php';
 
 ?>

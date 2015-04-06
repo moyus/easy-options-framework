@@ -39,10 +39,10 @@ if( !class_exists('EOF_Loader') ) :
 		 * @return void
 		 */
 		function require_files() {
-			require EOF_DIR . '/core/class-eof-admin.php';
-			require EOF_DIR . '/core/class-eof-views.php';
-			require EOF_DIR . '/core/class-eof-settings.php';
-			require EOF_DIR . '/core/class-eof-import-export.php';
+			require EOF_DIR . 'core/class-eof-admin.php';
+			require EOF_DIR . 'core/class-eof-views.php';
+			require EOF_DIR . 'core/class-eof-settings.php';
+			require EOF_DIR . 'core/class-eof-import-export.php';
 		}
 
 		/**
@@ -54,8 +54,8 @@ if( !class_exists('EOF_Loader') ) :
 		function enqueue_scripts() {
 			wp_enqueue_script('jquery');
 			wp_enqueue_style( 'jquery-ui' );
-			wp_enqueue_style('eof-style', EOF_URL . '/css/eof-style.css' );
-			wp_enqueue_script('eof_custom_js', EOF_URL . '/js/eof-custom.js', array( 'jquery', 'wp-color-picker' ), '', true );
+			wp_enqueue_style('eof-style', EOF_URL . 'css/eof-style.css' );
+			wp_enqueue_script('eof_custom_js', EOF_URL . 'js/eof-custom.js', array( 'jquery', 'wp-color-picker' ), '', true );
 		}
 
 		/**
@@ -66,7 +66,7 @@ if( !class_exists('EOF_Loader') ) :
 		 */
 		function i18n() {
 			// set text domain
-			load_textdomain( 'eof', EOF_DIR . '/languages/eof-' . get_locale() . '.mo' );
+			load_textdomain( 'eof', EOF_DIR . 'languages/eof-' . get_locale() . '.mo' );
 		}
 
 		/**

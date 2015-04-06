@@ -52,7 +52,10 @@ class EOF {
 		$this->configs = wp_parse_args( $configs, $this->get_default_configs() );
 
 		$this->eof_admin = new EOF_Admin($this);
-		$this->eof_port = new EOF_Import_Export($this);
+
+		if($this->configs['show_import_export']) {
+			$this->eof_port = new EOF_Import_Export($this);
+		}
 		
 		$this->sections = $this->array_sort( 
 			apply_filters( 'eof_sections', $sections ), 

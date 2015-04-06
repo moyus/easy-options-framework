@@ -57,12 +57,13 @@ require EOF_DIR . 'eof.php';
 require EOF_DIR . 'sample-config.php';
 ```
 
+
 ## Change log
 #### 1.0.3
-	•	change file_get_contents() function to WordPress built-in HTTP API wp_remote_get()
+	•change file_get_contents() function to WordPress built-in HTTP API wp_remote_get()
 #### 1.0.2
-	•	fix data saving bug
+	•fix data saving bug
 #### 1.0.1
-	•	Add data sanitization and validation
+	•Add data sanitization and validation
 #### 1.0.0 
-	•	Initial release
+	•Initial release

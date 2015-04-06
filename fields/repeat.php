@@ -36,7 +36,7 @@ class EOF_field_repeat extends EOF_field {
 			'title'			=> '',
 			'desc'			=> '',
 			'default' 		=> null,
-			'sizes'			=> 'regular',
+			'sizes'			=> '',
 			'readonly'		=> false,
 			'sub_fields'	=> null
 		) );
@@ -62,9 +62,22 @@ class EOF_field_repeat extends EOF_field {
 	public function render_field() {
 		$values = (array) $this->value;
 		$count = 0;
+
+		$class = 'widefat eof-repeat-table';
+		switch ($this->field['sizes']) {
+			case "small":
+				$class .= ' small-table';
+				break;
+			case "regular":
+				$class .= ' regular-table';
+				break;
+			default:
+				$class .= '';
+				break;
+		}
 	?>
 		<div class="eof-repeat-table-wrap">
-			<table id="<?php echo $this->field['id'] ?>" class="widefat eof-repeat-table">
+			<table id="<?php echo $this->field['id'] ?>" class="<?php echo $class; ?>">
 				<thead>
 					<tr>
 					<?php  

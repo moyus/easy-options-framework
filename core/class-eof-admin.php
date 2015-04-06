@@ -21,6 +21,12 @@ class EOF_Admin {
 		add_filter('admin_footer_text', array($this, 'admin_rate_us'));
 	}
 
+	/**
+	 * Add admin menu page
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
 	function eof_admin_menu() {
 		global $menu, $submenu;
 
@@ -81,10 +87,22 @@ class EOF_Admin {
     	}
 	}
 
+	/**
+	 * Display options page
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
 	function eof_options_page_callback() {
 		$this->parent->eof_views->admin_options_page();
 	}
 
+	/**
+	 * Add help tab to options page
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
 	function options_page_add_help_tab() {
 
 		if( empty( $this->parent->configs['help_tabs'] ) ) {
