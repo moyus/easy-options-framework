@@ -118,27 +118,27 @@ class EOF_Import_Export {
 			}
 
 			// Process import file
-			$this->process_import_file( $file_data['file'] );
+			$this->process_import_file( $file_data );
 		}
 	}
-	function process_import_file( $file ) {
+	function process_import_file( $file_data ) {
 		global $eof_import_results;
 
 		// File exists?
-		if ( ! file_exists( $file ) ) {
+		if ( ! file_exists( $file_data['file'] ) ) {
 			wp_die(
 				__( 'Import file could not be found. Please try again.', 'eof' ),
 				'',
 				array( 'back_link' => true )
 			);
 		}
-
+	
 		// Get file contents and decode
-		$data = file_get_contents( $file );
-		$data = json_decode( $data, true );
+		$data = wp_remote_get( $file_data['url'] );
+		$data = json_decode( $data['body'], true );
 
 		// Delete import file
-		unlink( $file );
+		unlink( $file_data['file'] );
 
 		// Import the options data
 		$this->import_data( $data );
@@ -148,7 +148,7 @@ class EOF_Import_Export {
 
 		if ( ! empty ( $data ) && is_array( $data ) && isset ( $data['eof-backup'] ) && $data['eof-backup'] == '1' ) {
 
-			$new_options = wp_parse_args( $data, $this->parent->options );
+			$new_options = wp_parse_args( $data, $this->parent->null_options );
 
             update_option( $this->parent->configs['opt_name'], $new_options );
 		}
