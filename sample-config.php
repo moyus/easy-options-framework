@@ -187,7 +187,7 @@ function eof_sample_setings_setup() {
 				'type' => 'post_select',
 				'holder' => 'Select Page',
 				'desc'	=> 'you can set custom postype select!',
-				'data'	=> array('post_type' => 'page')
+				'data'	=> array('post_type' => 'page') // WP_Query args
 			),
 			'layout' => array(
 				'title'	=> 'Image Select',
@@ -308,6 +308,9 @@ function eof_sample_setings_setup() {
 		'admin_bar_icon'     => 'dashicons-portfolio',
 		// On load save the defaults to DB before user clicks save or not
 		'save_defaults'		=> false,
+		// Shows the Import/Export panel when not used as a field.
+		'show_import_export'   => true,
+		// Specify option page help tabs. array( array('id' => '', 'title' => '', 'content' => ''), )
 		'help_tabs'			=> array(
 			array(
 				'id' => 'help',
@@ -320,6 +323,7 @@ function eof_sample_setings_setup() {
 				'content' => '<p>A framework for building WordPress theme and plugin options.</p><p>f you like this plugin and find it useful, help keep this plugin free and actively developed by <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mr%2emoyus%40gmail%2ecom&lc=US&item_name=20Theme&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest">Making a donation.</a></p>'
 			)
 		),
+		// Specify option page help sidebar content
 		'help_sidebar'		=> '<p>This is help sidebar, it is so cool, right?</p>'
 	);	
 	
@@ -339,22 +343,4 @@ function eof_sample_blank_callback() {
 	<?php
 }
 
-function eof_donate_callback() {
-	?>
-	<p>
-		<?php _e('If you like this plugin and find it useful, help keep this plugin free and actively developed by clicking the donate button. Also, don\'t forget to follow me on Twitter.', 'everbox'); ?>
-	</p>
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-	<input type="hidden" name="cmd" value="_donations">
-	<input type="hidden" name="business" value="mr.moyus@gmail.com">
-	<input type="hidden" name="lc" value="US">
-	<input type="hidden" name="item_name" value="20Theme">
-	<input type="hidden" name="no_note" value="0">
-	<input type="hidden" name="currency_code" value="USD">
-	<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-	<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-	<img alt="" border="0" src="https://www.paypalobjects.com/zh_XC/i/scr/pixel.gif" width="1" height="1">
-	</form>
-	<?php
-}
 ?>

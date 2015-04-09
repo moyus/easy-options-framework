@@ -35,6 +35,4 @@ if( !defined('EOF_URL') ) {
  * The core plugin class files
  */
 require EOF_DIR . 'core/class-eof-loader.php';
-require EOF_DIR . 'core/class-eof.php';
-
 ?>

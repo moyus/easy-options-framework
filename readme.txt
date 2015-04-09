@@ -49,13 +49,11 @@ Easy options framework which uses the WordPress Settings API makes it easy to cr
 1. Copy the plugin to your theme / plugin
 2. Customize the directory and path settings(with trailing slash)
 
-```
 define('EOF_DIR', get_template_directory() . '/eof/‘);
 define('EOF_URL', get_template_directory_uri() . ‘/eof/’);
 
 require EOF_DIR . 'eof.php';
 require EOF_DIR . 'sample-config.php';
-```
 
 
 ## Change log

@@ -43,6 +43,7 @@ if( !class_exists('EOF_Loader') ) :
 			require EOF_DIR . 'core/class-eof-views.php';
 			require EOF_DIR . 'core/class-eof-settings.php';
 			require EOF_DIR . 'core/class-eof-import-export.php';
+			require EOF_DIR . 'core/class-eof.php';
 		}
 
 		/**
@@ -81,9 +82,8 @@ if( !class_exists('EOF_Loader') ) :
 			
 			if ( strpos( $plugin_file, 'eof.php' ) !== false ) {
 				$plugin_meta[] = sprintf(
-					'<a href="%s">%s</a>',
+					'<a href="%s" target="_blank">%s</a>',
 					'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mr%2emoyus%40gmail%2ecom&lc=US&item_name=20Theme&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest',
-					//'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6069955',
 					__( 'Donate', 'eof' )
 				);
 			}
