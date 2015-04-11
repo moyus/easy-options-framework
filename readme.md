@@ -5,8 +5,7 @@ Tags: settings, options, api, framework
 Requires at least: 3.8  
 Tested up to: 4.1  
 Stable tag: 4.1   
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+License: GPLv2 or later
 
 A simple framework which use WordPress Settings API for building WordPress theme and plugin options.
 

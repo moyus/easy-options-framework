@@ -4,7 +4,7 @@
  *
  * @package   EOF
  * @author    moyu <moyuboy@gmail.com>
- * @license   GPL-2.0+
+ * @license   GPLv2 or later
  * @link      http://www.20theme.com
  * @copyright 2013-2015 20Theme
  *
@@ -15,11 +15,11 @@
  * Version:     1.0.3
  * Author:      moyu
  * Author URI:  http://www.20theme.com
- * License:     GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:     GPLv2 or later
  * Text Domain: eof
  * Domain Path: /languages
  */
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
