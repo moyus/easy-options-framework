@@ -1,6 +1,6 @@
 ## Easy Options Framework
-Contributors: mr.moyus  
-Author URI: http://www.20theme.com  
+Contributors: moyu  
+Author URI: https://moyu.io  
 Tags: settings, options, api, framework  
 Requires at least: 3.8  
 Tested up to: 4.1  
@@ -58,10 +58,10 @@ require EOF_DIR . 'sample-config.php';
 
 ## Change log
 #### 1.0.3
-	•	change file_get_contents() function to WordPress built-in HTTP API wp_remote_get()
+- change file_get_contents() function to WordPress built-in HTTP API wp_remote_get()
 #### 1.0.2
-	•	fix data saving bug
+- fix data saving bug
 #### 1.0.1
-	•	Add data sanitization and validation
+- Add data sanitization and validation
 #### 1.0.0 
-	•	Initial release
+- Initial release
