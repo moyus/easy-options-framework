@@ -1,6 +1,6 @@
 === Easy Options Framework ===
-Contributors: mr.moyus  
-Author URI: http://www.20theme.com  
+Contributors: moyu  
+Author URI: https://moyu.io  
 Tags: settings, options, api, framework  
 Requires at least: 3.8  
 Tested up to: 4.1  

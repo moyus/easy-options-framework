@@ -27,7 +27,6 @@ if( !class_exists('EOF_Loader') ) :
 		public function run() {
 
 			add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts') );
-			add_filter( 'plugin_row_meta', array($this, 'donate_link'), 10, 2 );
 			$this->i18n();
 			$this->require_files();
 		}
@@ -68,26 +67,6 @@ if( !class_exists('EOF_Loader') ) :
 		function i18n() {
 			// set text domain
 			load_textdomain( 'eof', EOF_DIR . 'languages/eof-' . get_locale() . '.mo' );
-		}
-
-		/**
-		 * Add donate link to plugin description in /wp-admin/plugins.php
-		 *
-		 * @since  1.0.0
-		 * @param  array $plugin_meta
-		 * @param  string $plugin_file
-		 * @return array
-		 */
-		function donate_link( $plugin_meta, $plugin_file ) {
-			
-			if ( strpos( $plugin_file, 'eof.php' ) !== false ) {
-				$plugin_meta[] = sprintf(
-					'<a href="%s" target="_blank">%s</a>',
-					'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mr%2emoyus%40gmail%2ecom&lc=US&item_name=20Theme&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest',
-					__( 'Donate', 'eof' )
-				);
-			}
-			return $plugin_meta;
 		}
 
 	}

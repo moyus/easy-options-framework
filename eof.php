@@ -5,16 +5,16 @@
  * @package   EOF
  * @author    moyu <moyuboy@gmail.com>
  * @license   GPLv2 or later
- * @link      http://www.20theme.com
- * @copyright 2013-2015 20Theme
+ * @link      https://moyu.io
+ * @copyright 2013-2020 MOYU
  *
  * @wordpress-plugin
  * Plugin Name: Easy Options Framework
- * Plugin URI:  http://www.20theme.com/plugins/easy-options-framework
+ * Plugin URI:  https://moyu.io/works
  * Description: A simple framework which uses the WordPress Settings API makes it easy to create an options panel in any WordPress theme and plugin.
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author:      moyu
- * Author URI:  http://www.20theme.com
+ * Author URI:   https://moyu.io
  * License:     GPLv2 or later
  * Text Domain: eof
  * Domain Path: /languages

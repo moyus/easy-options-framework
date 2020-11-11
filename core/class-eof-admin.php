@@ -138,7 +138,7 @@ class EOF_Admin {
 
 		if($screen->id == $this->options_page_id) {
 			$rate_text = sprintf( __( 'Thank you for using <a href="%1$s" target="_blank">Easy Options Framework</a>!', 'eof' ),
-				'http://www.20theme.com/plugins/easy-options-framework'
+				' https://moyu.io/works'
 			);
 			return str_replace( '</span>', '', $footer_text ) . ' | ' . $rate_text . '</span>';
 		} else {

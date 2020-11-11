@@ -256,7 +256,7 @@ function eof_sample_setings_setup() {
 		'id'	=> 'url',
 		'priority'	=> 26,
 		'type'	=> 'url',
-		'url'	=> 'http://www.20theme.com'
+		'url'	=> 'https://moyu.io'
 	);
 
 	//Blank
@@ -266,15 +266,6 @@ function eof_sample_setings_setup() {
 		'type'	=> 'blank',
 		'callback' => 'eof_sample_blank_callback',
 		'priority'	=> 36,
-	);
-
-	//Donate
-	$sections['donate'] = array(
-		'title'	=> 'Donate',
-		'id'	=> 'donate',
-		'type'	=> 'blank',
-		'callback' => 'eof_donate_callback',
-		'priority'	=> 41,
 	);
 
 	$configs = array(
@@ -320,19 +311,19 @@ function eof_sample_setings_setup() {
 			array(
 				'id' => 'about',
 				'title' => 'About',
-				'content' => '<p>A framework for building WordPress theme and plugin options.</p><p>f you like this plugin and find it useful, help keep this plugin free and actively developed by <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mr%2emoyus%40gmail%2ecom&lc=US&item_name=20Theme&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest">Making a donation.</a></p>'
+				'content' => '<p>A framework for building WordPress theme and plugin options.</p>'
 			)
 		),
 		// Specify option page help sidebar content
 		'help_sidebar'		=> '<p>This is help sidebar, it is so cool, right?</p>'
 	);	
 	
-	if(class_exists('eof')) {
-		$sample_settings_configs = new eof(
+	if(class_exists('EOF')) {
+		$sample_settings_configs = new EOF(
 			$configs, 
 			apply_filters( 'eof_sample_option_sections', $sections )
 		);
-	} 
+	}
 
 }
 add_action( 'init', 'eof_sample_setings_setup' );
