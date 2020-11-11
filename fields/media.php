@@ -95,7 +95,7 @@ class EOF_field_media extends EOF_field {
     	<input class="button eof-media-delete-button" type="button" data-input-id="<?php echo esc_attr($this->option_id); ?>" value="<?php _e('Delete', 'eof'); ?>" />
     	<br>
     		<?php if($preview) : ?>
-    		<p class="image-preview"><img src="<?php echo esc_attr($this->value); ?>" alt="" style="max-width:100%;"></p>
+    		<p class="eof-image-preview"><img src="<?php echo esc_attr($this->value); ?>" alt=""></p>
     		<?php endif; ?>
     	<?php endif; ?>
 		<span class="description"><?php echo $this->field['desc']; ?></span>
